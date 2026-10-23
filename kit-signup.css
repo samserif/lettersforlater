@@ -24,12 +24,13 @@
 #signup .formkit-input:focus + .signup-email-label,#signup .formkit-input:not(:placeholder-shown) + .signup-email-label{top:7px;transform:none;font-size:11px}
 @media(prefers-reduced-motion:reduce){#signup .signup-email-label{transition:none}}
 
-#notify-dialog{position:fixed;border-radius:8px}
+#notify-dialog{position:fixed;box-sizing:border-box;border-radius:8px;width:min(580px,calc(100% - 32px));height:auto;max-height:calc(100dvh - 32px);padding:56px 40px 32px;overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;scroll-padding-block:20px}
 #notify-dialog:not([open]){display:none}
 #notify-dialog::backdrop{background:#10254f88}
 #notify-dialog #signup{margin:0;min-height:0;max-width:none}
 #notify-dialog #notify-help{font:400 14px/1.8 'DM Sans',sans-serif;margin:0 0 24px;color:var(--ink)}
 #notify-dialog .dialog-close{color:var(--ink);position:absolute}
+#notify-dialog .dialog-close:focus:not(:focus-visible),#notify-dialog #notify-title:focus{outline:none;box-shadow:none}
 
 /* Modal presentation; the same Kit form retains its hero styling on close. */
 #notify-dialog #notify-title{margin:0 0 14px}
@@ -38,8 +39,10 @@
 #notify-dialog #signup .signup-email-label{left:16px}
 #notify-dialog #signup .formkit-powered-by-convertkit{background-image:url("assets/kit-badge-cream.svg?v=70")!important}
 
-/* Preserve the form area when Kit replaces its fields with confirmation text. */
-#notify-dialog .notify-form-slot{overflow:auto;box-sizing:border-box}
+/* Let content grow naturally; only the outer dialog scrolls if it cannot fit. */
+#notify-dialog .notify-form-slot{overflow:visible;box-sizing:border-box;min-width:0}
+#notify-dialog #signup,#notify-dialog #signup .formkit-fields{width:100%;min-width:0;max-width:100%}
+#notify-dialog #signup .formkit-field{min-width:0;max-width:100%}
 
 .club .signup-hero-confirmation{max-width:560px;min-height:100px;margin:40px 0 0;color:#164AA0;font:700 15px/1.6 'DM Sans',sans-serif;text-align:left}
 .club .signup-hero-confirmation[hidden]{display:none}
@@ -54,6 +57,7 @@
 .club a[href="#signup"]:focus-visible{outline:2px solid #164aa0;outline-offset:4px}
 .club a.signup-pointer-return:focus,.club a.signup-pointer-return:focus-visible{outline:none!important;box-shadow:none!important}
 @media(max-width:750px){
- #notify-dialog{inset:auto;top:calc(var(--notify-viewport-top,0px) + 16px);left:0;right:0;margin:0 auto;max-height:calc(var(--notify-viewport-height,100dvh) - 32px);overflow-y:auto;overscroll-behavior:contain;scroll-padding-block:20px;padding-top:44px}
+ #notify-dialog{inset:auto;top:calc(var(--notify-viewport-top,0px) + 16px);left:0;right:0;margin:0 auto;max-height:calc(var(--notify-viewport-height,100dvh) - 32px);padding:56px 24px 28px}
  #notify-dialog #notify-title{font-size:30px}
+ #notify-dialog #signup .formkit-field{flex:0 0 auto!important}
 }

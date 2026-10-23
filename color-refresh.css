@@ -20,6 +20,11 @@
 .club .hero .intro,.club .hero .subnote{color:#fff}
 .club .hero .pop-up-stamp{background:var(--pink);color:#164AA0;border-color:#164AA0;outline-color:var(--pink);box-shadow:0 0 0 7px #164AA0}
 .club .hero .pop-up-stamp:before{background:var(--pink)}
+/* A fixed paper edge keeps the dashed frame equally inset at every width. */
+.club .hero .pop-up-stamp{--stamp-edge:9px;border:0;outline:0;box-shadow:none;grid-template-columns:28px minmax(0,1fr)}
+.club .hero .pop-up-stamp:before{inset:calc(-1 * var(--stamp-edge))}
+.club .hero .pop-up-stamp:after{content:'';display:block;position:absolute;inset:0;width:auto;height:auto;background:none;border:1px dashed currentColor;transform:none;z-index:2;pointer-events:none}
+.club .hero .pop-up-stamp .stamp-title{white-space:normal;text-wrap:balance}
 .club .hero .postage-art:before{display:none;content:none}
 .club .hero .postage-art img{filter:none}
 .club .hero #signup .formkit-input{background:#fff!important}
