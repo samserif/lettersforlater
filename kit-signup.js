@@ -14,7 +14,7 @@
  dialog.id = 'notify-dialog';
  dialog.setAttribute('aria-labelledby', 'notify-title');
  dialog.setAttribute('aria-describedby', 'notify-help');
- dialog.innerHTML = `<button class="dialog-close" type="button" aria-label="close signup"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"></path></svg></button><h2 id="notify-title">let’s keep you posted</h2><p id="notify-help">be the first to hear about our next pop-up and when you can book your seat.</p><div class="notify-form-slot"></div>`;
+ dialog.innerHTML = `<button class="dialog-close" type="button" aria-label="close signup"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"></path></svg></button><div class="notify-content"><h2 id="notify-title" tabindex="-1" autofocus>let’s keep you posted</h2><p id="notify-help">be the first to hear about our next pop-up and when you can book your seat</p><div class="notify-form-slot"></div></div>`;
  document.body.append(dialog);
  let opener;
  let pointerOpened = false;
@@ -27,7 +27,7 @@
    resetUnfinishedSignup();
    home.after(host);
    heroConfirmation.hidden = true;
-   slot.style.height = '';
+   slot.style.minHeight = '';
    const label = submitLabel();
    if (label) label.textContent = originalSubmitLabel;
    document.documentElement.style.overflow = previousOverflow;
@@ -81,7 +81,7 @@
    const error = document.getElementById(`${input.id}-error`);
    input.setAttribute('aria-invalid', String(invalid));
    if (error) error.hidden = !invalid;
-   if (invalid && dialog.open) slot.style.height = '';
+   if (invalid && dialog.open) slot.style.minHeight = '';
    updateModalViewport();
    return !invalid;
  }
@@ -94,7 +94,7 @@
      input.focus({preventScroll:true});
      return;
    }
-   if (dialog.open) slot.style.height = `${slot.getBoundingClientRect().height}px`;
+   if (dialog.open) slot.style.minHeight = `${slot.getBoundingClientRect().height}px`;
  }, true);
  const successCopy = 'almost there! check your email and confirm your address to join the waitlist.';
  function enhanceForm() {
@@ -158,11 +158,13 @@
    resetUnfinishedSignup();
    slot.append(host);
    dialog.showModal();
+   dialog.scrollTop = 0;
    document.documentElement.style.overflow = 'hidden';
    enhanceForm();
    updateModalViewport();
    if (window.matchMedia('(max-width: 750px)').matches) {
-     dialog.querySelector('.dialog-close').focus({preventScroll:true});
+     // Start with the heading: no close-button highlight or automatic keyboard.
+     dialog.querySelector('#notify-title').focus({preventScroll:true});
    } else {
      host.querySelector('input[type="email"]')?.focus({preventScroll:true});
    }
