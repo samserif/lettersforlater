@@ -1,0 +1,39 @@
+/* Blue hero, pink events, and yellow contact using the established brand palette. */
+.club #events{background-color:var(--pink);background-image:url('assets/postal-pattern.svg');background-size:430px 280px}
+.club .contact,.club .contact:before{background:var(--tint)}
+/* Keep the original two-card artwork and controls in the source for future events. */
+.event-postcard[hidden]{display:none!important}
+.postcard-carousel[data-single-event]{max-width:760px;width:100%;margin:20px 0 0}
+.postcard-carousel[data-single-event] .postcard-track{overflow:visible;scroll-snap-type:none;scroll-padding:0;padding:10px 0 23px;gap:0}
+.postcard-carousel[data-single-event] .event-postcard{flex:0 1 760px;width:100%;max-width:760px}
+.postcard-carousel[data-single-event] .carousel-controls{display:none!important}
+
+/* Keep the collage free of a paper backing. */
+.club .hero .postage-art:before{display:none;content:none}
+
+/* Blue hero exploration. Keep the other sections' established ink and paper colors. */
+.club > header,.club .hero{background:#164AA0;color:#fff}
+.club > header .logo,.club > header .desktop-nav a,.club > header .menu-toggle{color:#fff}
+.club > header .header-cta{background:transparent;color:#fff;border:2px solid #fff}
+.club .hero .button{background:var(--pink);color:#164AA0}
+.club .hero h1,.club .hero h1 em{color:#fff}
+.club .hero .intro,.club .hero .subnote{color:#fff}
+.club .hero .pop-up-stamp{background:var(--pink);color:#164AA0;border-color:#164AA0;outline-color:var(--pink);box-shadow:0 0 0 7px #164AA0}
+.club .hero .pop-up-stamp:before{background:var(--pink)}
+.club .hero .postage-art:before{display:none;content:none}
+.club .hero .postage-art img{filter:none}
+.club .hero #signup .formkit-input{background:#fff!important}
+.club .hero #signup .formkit-submit{background:var(--pink)!important;color:#164AA0!important}
+.club .hero #signup .formkit-submit > span{background:transparent!important;color:#164AA0!important}
+.club .hero #signup .formkit-alert-success,.club .hero .signup-hero-confirmation{color:#fff!important}
+.club .hero #signup .signup-email-error{background:transparent;color:#fff;padding:0;border-radius:0}
+.club > header a:focus-visible,.club .hero a:focus-visible,.club .hero #signup .formkit-submit:focus-visible{outline-color:#fff!important}
+
+/* Retain blue Kit lettering with a transparent container, as requested. */
+.club .hero #signup .formkit-powered-by-convertkit{background-color:transparent!important}
+
+/* A softer error border against the blue hero; modal validation stays red. */
+.club .hero #signup .formkit-input[aria-invalid="true"],.club .hero #signup .formkit-input[aria-invalid="true"]:focus,.club .hero #signup .formkit-input[aria-invalid="true"]:focus-visible{border:2px solid rgba(255,255,255,.5)!important;background-clip:padding-box!important}
+
+/* Keep all CTA controls stationary while hovering. */
+.club .button:hover,.club .nav-cta:hover,.club .header-cta:hover,#signup .formkit-submit:hover{transform:none!important;translate:none!important}

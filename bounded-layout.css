@@ -1,0 +1,27 @@
+html{background:#fff7dd}body.club{width:100%;max-width:1440px;margin-inline:auto;container-type:inline-size;overflow-x:clip}
+/* Artwork occupies a grid column, so the card always reserves its full square height. */
+.postcard-inner,.postcard-soon .postcard-inner{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);grid-template-rows:auto auto auto;column-gap:27px;row-gap:24px;align-items:start;padding:43px 48px;min-height:422px}.club .event-postcard h3{grid-column:1;grid-row:1;width:auto;max-width:none;min-height:0;padding:0;margin:0;font-size:clamp(29px,3vw,41px)}.event-postcard dl{grid-column:1;grid-row:2;width:auto;margin:0;gap:17px;min-height:0}.club .event-postcard .button{grid-column:1;grid-row:3;justify-self:start;align-self:end;margin:0}.postcard-art{position:relative;grid-column:2;grid-row:1/4;align-self:center;min-width:0;width:100%;max-width:260px;justify-self:center;padding:14px;isolation:isolate}.postcard-art .postcard-image,.postcard-soon .postcard-art .postcard-image{position:relative;inset:auto;width:100%;height:auto;aspect-ratio:1/1;transform:rotate(3deg);border:7px solid #fff9e9;overflow:hidden;margin:0;z-index:0}.postcard-soon .postcard-art .postcard-image{transform:rotate(-4deg)}.postcard-art .postcard-stamp{top:0;right:0;bottom:auto;z-index:2}.postcard-art .postcard-heart{bottom:0;right:4px;top:auto;z-index:2}.postcard-art .soon-postage{top:-2px;right:0;bottom:auto;z-index:2}.postcard-art .soon-envelope-stamp{bottom:-2px;right:0;top:auto;z-index:2}.postcard-inner{overflow:visible}
+.club .contact{grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:6%;padding-block:42px}.club .contact h2{font-size:21px;line-height:1.5;max-width:390px}.contact-action{display:flex;align-items:center;justify-content:flex-start;gap:25px;min-width:0}.club .contact-email{font-size:17px;line-height:1.6;gap:0 6px;min-width:0;flex-wrap:wrap;text-decoration:none}.club .contact-email,.club .contact-email:hover,.club .contact-email:focus-visible{color:var(--ink);transition:none}.club .contact-email .email-prefix,.club .contact-email:hover .email-prefix,.club .contact-email:focus-visible .email-prefix{text-decoration:none;font-weight:400;color:var(--ink)}.club .contact-email .email-address{text-decoration:none;overflow-wrap:anywhere}.club .contact-email:hover .email-address,.club .contact-email:focus-visible .email-address{text-decoration:underline;text-underline-offset:5px;color:var(--ink)}.contact-postage{width:76px;height:auto;flex:0 0 76px;transform:rotate(9deg)}
+@media(max-width:1000px) and (min-width:751px){.contact-action{gap:15px}.club .contact-email{font-size:15px}.contact-postage{width:59px;flex-basis:59px}.club .contact h2{font-size:18px}}
+@media(max-width:750px){.postcard-inner,.postcard-soon .postcard-inner{grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:auto auto auto;gap:24px 12px;padding:30px 27px;min-height:0}.club .event-postcard h3{grid-column:1/-1;grid-row:1;font-size:28px;line-height:1.12;max-width:none;margin:0}.event-postcard dl{grid-column:1;grid-row:2;margin:0;width:auto;min-height:0;gap:21px;align-self:center}.event-postcard dd{font-size:13px;line-height:1.6}.postcard-art{grid-column:2;grid-row:2;align-self:center;width:100%;max-width:220px;padding:8px;min-width:0}.postcard-art .postcard-image,.postcard-soon .postcard-art .postcard-image{inset:auto;width:100%;height:auto;aspect-ratio:1/1;border-width:5px}.postcard-art .postcard-stamp{width:40px;height:44px;top:-7px;right:-4px;font-size:29px}.postcard-art .postcard-heart{width:45px;height:45px;bottom:-5px;right:0}.postcard-art .soon-postage{width:47px;height:47px;top:-9px;right:-5px}.postcard-art .soon-envelope-stamp{width:63px;height:48px;bottom:-7px;right:-4px}.club .event-postcard .button{grid-column:1/-1;grid-row:3;justify-self:start;align-self:start}.club .contact{grid-template-columns:1fr;gap:17px}.club .contact h2{font-size:18px;line-height:1.5;max-width:100%;margin:10px 0 0}.contact-action{justify-content:space-between;gap:18px}.club .contact-email{font-size:15px;gap:0 5px}.contact-postage{width:61px;flex-basis:61px}}
+@media(max-width:380px){.postcard-inner,.postcard-soon .postcard-inner{padding-inline:24px;gap:23px 10px}.club .event-postcard h3{font-size:26px}.event-postcard dd{font-size:12px}.club .contact-email{font-size:14px}.contact-postage{width:48px;flex-basis:48px}.club .contact h2{font-size:16px}}
+
+/* Keep postcard copy clear of the decorative edge; group the booking details
+   so spare card height never stretches the gap above its button. */
+.postcard-inner,.postcard-soon .postcard-inner{padding-left:64px}
+.postcard-details{grid-column:1;grid-row:2/4;display:flex;flex-direction:column;align-items:flex-start;gap:32px;min-width:0;align-self:start}
+.club .event-postcard .postcard-details dl{margin:0;width:100%;min-height:0}
+.club .event-postcard .postcard-details .button{align-self:flex-start;margin:0}
+@media(max-width:750px){
+ .postcard-inner,.postcard-soon .postcard-inner{padding-left:43px}
+ .postcard-details{gap:24px}
+}
+@media(max-width:380px){
+ .postcard-inner,.postcard-soon .postcard-inner{padding-left:40px}
+}
+
+/* Fix the title track so both cards start their event details at the same height. */
+.postcard-inner,.postcard-soon .postcard-inner{grid-template-rows:max-content auto 1fr}
+
+/* One corner radius across CTAs and button controls, including the Kit button. */
+.club button,.club .button,.club .nav-cta,.club .header-cta{border-radius:8px!important}
