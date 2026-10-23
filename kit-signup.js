@@ -14,7 +14,7 @@
  dialog.id = 'notify-dialog';
  dialog.setAttribute('aria-labelledby', 'notify-title');
  dialog.setAttribute('aria-describedby', 'notify-help');
- dialog.innerHTML = `<button class="dialog-close" type="button" aria-label="close signup"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"></path></svg></button><h2 id="notify-title" tabindex="-1" autofocus>let’s keep you posted</h2><p id="notify-help">be the first to hear about our next pop-up and when you can book your seat.</p><div class="notify-form-slot"></div>`;
+ dialog.innerHTML = `<button class="dialog-close" type="button" aria-label="close signup"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"></path></svg></button><div class="notify-content"><h2 id="notify-title" tabindex="-1" autofocus>let’s keep you posted</h2><p id="notify-help">be the first to hear about our next pop-up and when you can book your seat</p><div class="notify-form-slot"></div></div>`;
  document.body.append(dialog);
  let opener;
  let pointerOpened = false;
@@ -158,6 +158,7 @@
    resetUnfinishedSignup();
    slot.append(host);
    dialog.showModal();
+   dialog.scrollTop = 0;
    document.documentElement.style.overflow = 'hidden';
    enhanceForm();
    updateModalViewport();

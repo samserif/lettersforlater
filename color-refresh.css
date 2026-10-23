@@ -20,10 +20,10 @@
 .club .hero .intro,.club .hero .subnote{color:#fff}
 .club .hero .pop-up-stamp{background:var(--pink);color:#164AA0;border-color:#164AA0;outline-color:var(--pink);box-shadow:0 0 0 7px #164AA0}
 .club .hero .pop-up-stamp:before{background:var(--pink)}
-/* A fixed paper edge keeps the dashed frame equally inset at every width. */
-.club .hero .pop-up-stamp{--stamp-edge:9px;border:0;outline:0;box-shadow:none;grid-template-columns:28px minmax(0,1fr)}
-.club .hero .pop-up-stamp:before{inset:calc(-1 * var(--stamp-edge))}
-.club .hero .pop-up-stamp:after{content:'';display:block;position:absolute;inset:0;width:auto;height:auto;background:none;border:1px dashed currentColor;transform:none;z-index:2;pointer-events:none}
+/* Straight paper edges and fixed-length dashes, inset equally on every side. */
+.club .hero .pop-up-stamp{border:0;outline:0;box-shadow:none;grid-template-columns:28px minmax(0,1fr)}
+.club .hero .pop-up-stamp:before{content:none}
+.club .hero .pop-up-stamp:after{content:'';display:block;position:absolute;inset:6px;width:auto;height:auto;border:0;background-image:repeating-linear-gradient(to right,currentColor 0 5px,transparent 5px 9px),repeating-linear-gradient(to right,currentColor 0 5px,transparent 5px 9px),repeating-linear-gradient(to bottom,currentColor 0 5px,transparent 5px 9px),repeating-linear-gradient(to bottom,currentColor 0 5px,transparent 5px 9px);background-position:left top,left bottom,left top,right top;background-size:100% 1px,100% 1px,1px 100%,1px 100%;background-repeat:no-repeat;transform:none;z-index:2;pointer-events:none}
 .club .hero .pop-up-stamp .stamp-title{white-space:normal;text-wrap:balance}
 .club .hero .postage-art:before{display:none;content:none}
 .club .hero .postage-art img{filter:none}
