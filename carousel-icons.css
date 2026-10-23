@@ -1,0 +1,16 @@
+.club .carousel-controls button {
+  appearance: none;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  line-height: 1;
+}
+.club .carousel-controls button > svg {
+  display: block;
+  flex: 0 0 23px;
+  width: 23px;
+  height: 23px;
+  margin: 0;
+}

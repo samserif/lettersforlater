@@ -1,0 +1,4 @@
+.club header .logo,.club .mobile-menu-logo,.club .footer-brand{gap:.48em}.club footer .footer-tagline{font-size:18.9px}.club .contact h2{font-size:25.2px;line-height:1.5}.club footer .footer-copyright{grid-column:1/-1;justify-self:center;align-self:center;text-align:center;margin:5px 0 0;font:400 11px/1.6 'DM Sans',sans-serif;opacity:.8;max-width:100%}
+@media(max-width:1000px) and (min-width:751px){.club footer .footer-tagline{font-size:16.2px}.club .contact h2{font-size:21.6px}}
+@media(max-width:750px){.club footer .footer-tagline{font-size:16.2px}.club .contact h2{font-size:21.6px}.club footer .footer-copyright{font-size:10px;line-height:1.7;margin-top:3px}}
+@media(max-width:380px){.club footer .footer-tagline{font-size:14.4px}.club .contact h2{font-size:19.2px}}

@@ -1,0 +1,72 @@
+/* Reserve a full line and the longest duration so the heading never jumps. */
+.club .steps h2.reunion-heading { line-height: 1.2; }
+.reunion-end { white-space: nowrap; }
+.reunion-mobile-break { display: none; }
+.year-emphasis, .year-roller, .reunion-reduced { color: var(--ink, #164AA0); }
+.year-emphasis {
+  position: relative;
+  display: inline-block;
+  width: 3.4em;
+  height: 1.2em;
+  vertical-align: bottom;
+}
+.year-emphasis > .year-roller { display: block; }
+.year-underline {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -.13em;
+  width: calc(100% - .16em);
+  height: .18em;
+  fill: currentColor;
+  pointer-events: none;
+  overflow: visible;
+}
+.club .steps .step-grid { margin-top: 56px; }
+.year-roller {
+  display: inline-block;
+  width: 3.4em;
+  height: 1.2em;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+.year-roller-track {
+  display: block;
+  animation: reunion-years 6s cubic-bezier(.65, 0, .35, 1) infinite;
+}
+.year-roller-track > span {
+  display: block;
+  height: 1.2em;
+  line-height: 1.2;
+  white-space: nowrap;
+  text-align: center;
+}
+.reunion-reduced { display: none; }
+.reunion-accessible {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+@keyframes reunion-years {
+  0%, 28% { transform: translateY(0); }
+  33.333%, 61.333% { transform: translateY(-25%); }
+  66.667%, 94.667% { transform: translateY(-50%); }
+  100% { transform: translateY(-75%); }
+}
+@media (max-width: 750px) {
+  .reunion-mobile-break { display: initial; }
+  .reunion-desktop-break { display: none; }
+  .club .steps .step-grid { margin-top: 52px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .year-roller-track { animation: none; }
+  .year-emphasis { display: none; }
+  .reunion-reduced { display: inline; }
+  .reunion-end { white-space: normal; }
+}

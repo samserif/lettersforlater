@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'Fraunces Soft';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url(assets/fraunces-soft-0.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Fraunces Soft';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(assets/fraunces-soft-1.ttf) format('truetype');
+}

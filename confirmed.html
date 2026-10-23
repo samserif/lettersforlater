@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,follow">
+  <title>you’re on the list! — letters for later</title>
+  <meta name="description" content="Your email is confirmed. Hear about the next Letters for Later pop-up and when you can book your seat.">
+  <meta name="theme-color" content="#fff7dd">
+  <style>
+    @font-face{font-family:'DM Sans';font-style:normal;font-weight:400;font-display:swap;src:url('assets/font-0.ttf') format('truetype')}
+    @font-face{font-family:'DM Sans';font-style:normal;font-weight:700;font-display:swap;src:url('assets/font-3.ttf') format('truetype')}
+    @font-face{font-family:'Fraunces Soft';font-style:normal;font-weight:600;font-display:swap;src:url('assets/fraunces-soft-1.ttf') format('truetype')}
+    :root{color-scheme:light;--paper:#fff7dd;--ink:#164aa0}
+    *{box-sizing:border-box}
+    html{background:var(--paper)}
+    body{margin:0;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;background:var(--paper);color:var(--ink);font:400 16px/1.7 'DM Sans',sans-serif}
+    a{color:inherit;-webkit-tap-highlight-color:transparent}
+    a:focus-visible{outline:2px solid var(--ink);outline-offset:6px}
+    .confirmation-header{padding:32px 24px 0;display:flex;justify-content:center}
+    .brand{display:inline-flex;align-items:center;gap:14px;text-decoration:none;font:600 clamp(23px,4.8vw,30px)/1.1 'Fraunces Soft',Georgia,serif;letter-spacing:-.045em;white-space:nowrap}
+    .brand img{width:auto;height:1.25em;aspect-ratio:355/477;display:block}
+    main{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;max-width:640px;margin:auto;padding:36px 24px 48px;text-align:center}
+    .envelope{display:block;width:min(140px,35vw);height:auto;aspect-ratio:610/420;margin:0 0 24px;overflow:hidden}
+    h1{font:600 clamp(38px,7.5vw,58px)/1.12 'Fraunces Soft',Georgia,serif;font-variation-settings:'WONK' 0;letter-spacing:-.045em;margin:0 0 20px;text-wrap:balance}
+    .confirmation-copy{max-width:420px;margin:0;font-size:17px;line-height:1.75;text-wrap:pretty}
+    .button{display:inline-flex;align-items:center;justify-content:center;min-height:52px;margin-top:30px;padding:14px 24px;border:0;border-radius:8px;background:var(--ink);color:var(--paper);text-decoration:none;font:700 15px/1.4 'DM Sans',sans-serif;transition:transform .18s ease,background-color .18s ease}
+    .button:hover{background:#103d87}
+    footer{padding:16px 24px 24px;text-align:center;font-size:11px;line-height:1.7;color:var(--ink)}
+    @media(max-width:420px){.confirmation-header{padding-top:26px}main{padding-top:32px;padding-bottom:36px}.confirmation-copy{font-size:16px}.envelope{margin-bottom:22px}.button{font-size:14px;padding-inline:20px}}
+    @media(prefers-reduced-motion:reduce){.button{transition:none}.button:hover{transform:none}}
+  </style>
+</head>
+<body>
+  <header class="confirmation-header">
+    <a class="brand" href="/" aria-label="letters for later home"><img src="assets/letters-for-later-logo-blue.svg" width="355" height="477" alt=""><span>letters for later</span></a>
+  </header>
+  <main>
+    <svg class="envelope" viewBox="560 170 610 420" role="img" aria-labelledby="envelope-title">
+      <title id="envelope-title">a red envelope sealed with a pink heart</title>
+      <image href="assets/share-envelope-v2.png" x="0" y="0" width="1731" height="909"/>
+    </svg>
+    <h1>you’re on the list!</h1>
+    <p class="confirmation-copy">your email is confirmed. we’ll let you know about our next pop-up and when you can book your seat.</p>
+    <a class="button" href="/">back to letters for later</a>
+  </main>
+  <footer>© 2026 Letters for Later. All rights reserved.</footer>
+</body>
+</html>

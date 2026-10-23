@@ -1,0 +1,59 @@
+#signup{max-width:560px;scroll-margin-top:120px;min-height:100px;margin-top:40px}
+#signup .formkit-form{width:100%;max-width:100%!important;margin:0!important;padding:0!important;background:transparent!important;border:0!important;font-family:inherit!important}
+#signup .formkit-form [data-style="clean"]{padding:0!important}
+#signup .formkit-fields{display:flex!important;gap:10px;margin:0!important;padding-top:0;align-items:stretch}
+#signup .formkit-field{flex:1 1 180px!important;min-width:0;margin:0!important;position:relative}
+#signup .formkit-input{width:100%;height:52px;font:400 16px/1.4 'DM Sans',sans-serif!important;padding:14px!important;border:0!important;border-radius:8px!important;background:#fff7dd!important;color:#000!important;box-shadow:none!important;outline:none!important}
+#signup .formkit-input:focus,#signup .formkit-input:focus-visible{border:0!important;outline:none!important;box-shadow:none!important}
+#signup .formkit-submit{flex:0 0 auto!important;margin:0!important;font:700 15px/1.4 'DM Sans',sans-serif!important;min-height:52px}
+#signup .formkit-submit > span{font:inherit!important}
+#signup .formkit-submit:focus-visible{outline:2px solid #164AA0!important;outline-offset:3px}
+#signup .formkit-powered-by-convertkit-container{margin-top:10px!important}
+@media(max-width:750px){#signup .formkit-fields{flex-direction:column!important}#signup .formkit-field{flex:auto!important;width:100%}#signup .formkit-submit{width:100%}}
+#signup .formkit-input::placeholder{color:#777!important;opacity:1!important}
+/* Confirmation is plain header-blue text, without Kit's alert panel. */
+#signup .formkit-alert-success{background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;outline:0!important;padding:0!important;margin:0!important;color:#164AA0!important;font:700 15px/1.6 'DM Sans',sans-serif!important;text-align:left!important}
+#signup .formkit-alert-success p{margin:0!important;color:inherit!important;font:inherit!important}
+/* Keep the attribution legible but quieter than the signup controls. */
+#signup .formkit-powered-by-convertkit{width:108px!important;height:26px!important;background-size:90px auto!important;background-color:transparent!important;background-image:url("assets/kit-badge-blue.svg?v=63")!important;filter:none!important;mix-blend-mode:normal!important;opacity:1!important}
+#signup .formkit-powered-by-convertkit:hover,#signup .formkit-powered-by-convertkit:focus-visible{opacity:1!important}
+
+/* The label stays inside the field, above the address while focused or filled. */
+#signup .signup-email-label{position:absolute;left:14px;top:26px;transform:translateY(-50%);margin:0;padding:0;pointer-events:none;color:#777;font:400 16px/1.2 'DM Sans',sans-serif;transition:top .18s ease,font-size .18s ease,transform .18s ease}
+#signup .formkit-input:focus,#signup .formkit-input:not(:placeholder-shown){padding:22px 14px 6px!important}
+#signup .formkit-input:focus + .signup-email-label,#signup .formkit-input:not(:placeholder-shown) + .signup-email-label{top:7px;transform:none;font-size:11px}
+@media(prefers-reduced-motion:reduce){#signup .signup-email-label{transition:none}}
+
+#notify-dialog{position:fixed;border-radius:8px}
+#notify-dialog:not([open]){display:none}
+#notify-dialog::backdrop{background:#10254f88}
+#notify-dialog #signup{margin:0;min-height:0;max-width:none}
+#notify-dialog #notify-help{font:400 14px/1.8 'DM Sans',sans-serif;margin:0 0 24px;color:var(--ink)}
+#notify-dialog .dialog-close{color:var(--ink);position:absolute}
+
+/* Modal presentation; the same Kit form retains its hero styling on close. */
+#notify-dialog #notify-title{margin:0 0 14px}
+#notify-dialog #signup .formkit-input,#notify-dialog #signup .formkit-input:focus,#notify-dialog #signup .formkit-input:focus-visible{background:#fff!important;border:2px solid #164AA0!important}
+#notify-dialog #signup .formkit-input:focus,#notify-dialog #signup .formkit-input:not(:placeholder-shown){padding:20px 14px 6px!important}
+#notify-dialog #signup .signup-email-label{left:16px}
+#notify-dialog #signup .formkit-powered-by-convertkit{background-image:url("assets/kit-badge-cream.svg?v=70")!important}
+
+/* Preserve the form area when Kit replaces its fields with confirmation text. */
+#notify-dialog .notify-form-slot{overflow:auto;box-sizing:border-box}
+
+.club .signup-hero-confirmation{max-width:560px;min-height:100px;margin:40px 0 0;color:#164AA0;font:700 15px/1.6 'DM Sans',sans-serif;text-align:left}
+.club .signup-hero-confirmation[hidden]{display:none}
+
+/* Inline validation keeps the button at its normal height. */
+#signup .formkit-fields{align-items:flex-start!important}
+#signup .signup-email-error{display:flex;align-items:flex-start;gap:7px;width:100%;margin:8px 0 0;padding:0;color:#8F1C23;font:400 13px/1.5 'DM Sans',sans-serif;text-align:left}
+#signup .signup-email-error svg{flex:0 0 18px;width:18px;height:18px;margin-top:1px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+#signup .signup-email-error[hidden]{display:none}
+#signup .formkit-input[aria-invalid="true"],#signup .formkit-input[aria-invalid="true"]:focus,#notify-dialog #signup .formkit-input[aria-invalid="true"],#notify-dialog #signup .formkit-input[aria-invalid="true"]:focus{border:2px solid #8F1C23!important}
+#signup .formkit-input[aria-invalid="true"]:focus,#signup .formkit-input[aria-invalid="true"]:not(:placeholder-shown){padding:20px 14px 6px!important}
+.club a[href="#signup"]:focus-visible{outline:2px solid #164aa0;outline-offset:4px}
+.club a.signup-pointer-return:focus,.club a.signup-pointer-return:focus-visible{outline:none!important;box-shadow:none!important}
+@media(max-width:750px){
+ #notify-dialog{inset:auto;top:calc(var(--notify-viewport-top,0px) + 16px);left:0;right:0;margin:0 auto;max-height:calc(var(--notify-viewport-height,100dvh) - 32px);overflow-y:auto;overscroll-behavior:contain;scroll-padding-block:20px;padding-top:44px}
+ #notify-dialog #notify-title{font-size:30px}
+}

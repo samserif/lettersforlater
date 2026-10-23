@@ -1,0 +1,11 @@
+/* The existing square paper frame reserves space before lazy-loaded photos arrive. */
+.postcard-art .postcard-image > img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.postcard-soon .postcard-image > img { object-position: 55% center; }
