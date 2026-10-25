@@ -58,6 +58,8 @@
 #signup .signup-email-error svg{flex:0 0 18px;width:18px;height:18px;margin-top:1px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 #signup .signup-email-error[hidden]{display:none}
 #signup .formkit-input[aria-invalid="true"],#signup .formkit-input[aria-invalid="true"]:focus,#notify-dialog #signup .formkit-input[aria-invalid="true"],#notify-dialog #signup .formkit-input[aria-invalid="true"]:focus{border:2px solid #8F1C23!important}
+#notify-dialog #signup .signup-email-error{color:#DA0303}
+#notify-dialog #signup .formkit-input[aria-invalid="true"],#notify-dialog #signup .formkit-input[aria-invalid="true"]:focus,#notify-dialog #signup .formkit-input[aria-invalid="true"]:focus-visible{border-color:#DA0303!important}
 #signup .formkit-input[aria-invalid="true"]:focus,#signup .formkit-input[aria-invalid="true"]:not(:placeholder-shown){padding:20px 14px 6px!important}
 .club a[href="#signup"]:focus-visible{outline:2px solid #164aa0;outline-offset:4px}
 .club a.signup-pointer-return:focus,.club a.signup-pointer-return:focus-visible{outline:none!important;box-shadow:none!important}
