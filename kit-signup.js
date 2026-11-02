@@ -14,14 +14,15 @@
  dialog.id = 'notify-dialog';
  dialog.setAttribute('aria-labelledby', 'notify-title');
  dialog.setAttribute('aria-describedby', 'notify-help');
- dialog.innerHTML = `<button class="dialog-close" type="button" aria-label="close signup"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"></path></svg></button><div class="notify-content"><h2 id="notify-title" tabindex="-1" autofocus>let’s keep you posted</h2><p id="notify-help">be the first to hear about our next pop-up and when you can book your seat</p><div class="notify-form-slot"></div></div>`;
+ dialog.innerHTML = `<button class="dialog-close" type="button" aria-label="close signup"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"></path></svg></button><div class="notify-content"><h2 id="notify-title" tabindex="-1" autofocus>let’s keep you posted</h2><p id="notify-help">be the first to hear about our upcoming pop-ups and when you can book your seat</p><div class="notify-form-slot"></div></div>`;
  document.body.append(dialog);
  let opener;
  let pointerOpened = false;
  let previousOverflow = '';
  const slot = dialog.querySelector('.notify-form-slot');
  const submitLabel = () => host.querySelector('.formkit-submit > span');
- let originalSubmitLabel = 'join waitlist';
+ let originalSubmitLabel = 'notify me';
+ let activeSubmitLabel = 'notify me';
  dialog.querySelector('.dialog-close').addEventListener('click', () => dialog.close());
  dialog.addEventListener('close', () => {
    resetUnfinishedSignup();
@@ -131,7 +132,8 @@
      input.addEventListener('focus', updateModalViewport);
    }
    const buttonLabel = submitLabel();
-   if (buttonLabel && buttonLabel.textContent !== 'join waitlist') buttonLabel.textContent = 'join waitlist';
+   const desiredLabel = dialog.open ? activeSubmitLabel : 'notify me';
+   if (buttonLabel && buttonLabel.textContent !== desiredLabel) buttonLabel.textContent = desiredLabel;
    host.querySelectorAll('.formkit-alert-success').forEach(message => {
      if (message.textContent !== successCopy) message.textContent = successCopy;
      message.setAttribute('role', 'status');
@@ -151,6 +153,7 @@
    event.preventDefault();
    if (dialog.open) return;
    opener = link;
+   activeSubmitLabel = link.dataset.signupLabel || 'notify me';
    pointerOpened = event.detail > 0;
    previousOverflow = document.documentElement.style.overflow;
    const label = submitLabel();

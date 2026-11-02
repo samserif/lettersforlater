@@ -1,0 +1,142 @@
+/* December event launch preview. */
+.club .hero .pop-up-stamp{width:max-content;max-width:100%;grid-template-columns:28px auto;padding:10px 17px;gap:9px;align-items:center}
+.club .hero .pop-up-stamp .stamp-title{white-space:nowrap;text-wrap:nowrap}
+.club .hero .intro{max-width:470px}
+.club .hero .hero-booking{margin-top:22px;padding:16px 25px;font-weight:700;border-color:var(--pink)}
+.club .hero .hero-booking:hover{background:var(--pink);color:var(--ink)}
+.club .event-postcard .postcard-booking{white-space:nowrap}
+.club .event-postcard .venue-address{display:block;margin-top:5px;font-size:12px;line-height:1.55}
+.club .event-postcard dd{overflow-wrap:normal}
+.signup-storage[hidden]{display:none!important}
+@media(max-width:750px){
+ .club .hero .pop-up-stamp{padding:9px 14px;gap:8px;grid-template-columns:27px auto}
+ .club .hero .pop-up-stamp .stamp-title{font-size:16px}
+ .club .event-postcard .venue-address{font-size:12px}
+ .postcard-details{grid-column:1;grid-row:2/4}
+}
+/* Keep the site's existing blue CTA styling over Luma's injected defaults. */
+.club .event-postcard .luma-checkout--button{background:var(--ink);color:var(--paper);border:1px solid var(--ink);font-weight:700}
+.club .event-postcard .luma-checkout--button:hover{background:var(--ink);color:var(--paper)}
+@media(max-width:750px){
+ .postcard-nyc .postcard-inner{grid-template-rows:auto auto auto auto;row-gap:22px}
+ .postcard-nyc .postcard-details,.club .postcard-nyc .postcard-details dl{display:contents}
+ .postcard-nyc .postcard-details dl>div:first-child{grid-column:1;grid-row:2;align-self:center}
+ .postcard-nyc .postcard-details dl>div:last-child{grid-column:1/-1;grid-row:3}
+ .club .postcard-nyc .postcard-details .button{grid-column:1/-1;grid-row:4}
+ .postcard-nyc .postcard-art{grid-row:2}
+ .postcard-nyc .postcard-details dl>div:last-child>dd{white-space:normal}
+}
+/* Footer newsletter entry uses the existing Kit form with its own submit label. */
+.club footer .footer-newsletter{display:inline-block;background:var(--pink);color:var(--ink);border:1px solid var(--pink);font-weight:700;margin:18px 0 0;padding:13px 22px}
+.club footer .footer-newsletter:hover{background:var(--pink);color:var(--ink)}
+/* A roomier site-owned dialog around Luma's supported event-page embed. */
+#booking-dialog{position:fixed;inset:0;margin:auto;padding:0;width:min(860px,calc(100vw - 48px));height:min(820px,calc(100dvh - 64px));max-width:none;max-height:none;overflow:hidden;border:0;border-radius:8px;background:#fff;color:var(--ink);box-shadow:0 20px 70px #071c4566}
+#booking-dialog:not([open]){display:none}
+#booking-dialog::backdrop{background:#10254f99;backdrop-filter:blur(5px)}
+#booking-dialog .booking-toolbar{height:56px;display:flex;align-items:center;justify-content:space-between;padding:8px 12px 8px 22px;background:var(--ink);color:#fff;font:700 15px/1.4 'DM Sans',sans-serif}
+#booking-dialog .booking-close{appearance:none;display:grid;place-items:center;width:40px;height:40px;padding:8px;border:0;background:transparent;color:#fff;cursor:pointer}
+#booking-dialog .booking-close svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round}
+#booking-dialog .booking-close:focus-visible{outline:2px solid #fff;outline-offset:0}
+#booking-dialog .booking-frame-slot{height:calc(100% - 56px);background:#fff}
+#booking-dialog iframe{display:block;width:100%;height:100%;border:0}
+@media(max-width:750px){#booking-dialog{width:calc(100vw - 24px);height:calc(100dvh - 24px)}#booking-dialog .booking-toolbar{height:52px;padding-left:16px}#booking-dialog .booking-frame-slot{height:calc(100% - 52px)}}
+
+/* Keep newsletter controls intrinsic and social handles grouped together. */
+.club footer .footer-info .footer-newsletter{display:inline-flex;align-items:center;justify-content:center;width:max-content;max-width:100%;justify-self:center;align-self:center;flex:none}
+.club footer .footer-socials{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:20px 40px;width:100%;min-width:0}
+.club footer .footer-socials .social-link{flex:0 0 auto;width:max-content;max-width:100%;margin:0;justify-content:center;align-self:center}
+/* Fit newsletter content naturally instead of forcing a scrollable fixed height. */
+#notify-dialog{height:auto;min-height:min(320px,calc(var(--notify-viewport-height,100dvh) - 32px));scrollbar-width:none}
+#notify-dialog::-webkit-scrollbar{display:none}
+#notify-dialog .notify-content{padding-block:52px 60px}
+@media(max-width:750px){
+ #notify-dialog{height:auto;min-height:min(400px,calc(var(--notify-viewport-height,100dvh) - 32px))}
+ #notify-dialog .notify-content{padding-block:52px 60px}
+ .club footer .footer-socials{flex-direction:column;gap:20px}
+}
+
+/* Opening focus stays on the booking title; keyboard users retain visible controls. */
+#booking-title:focus{outline:none}
+/* A floating scroll indicator avoids reserving a strip beside the page. */
+html{scrollbar-width:none}
+html::-webkit-scrollbar{display:none}
+#page-scroll-indicator{position:fixed;z-index:100;right:3px;top:0;width:5px;min-height:24px;background:#164aa099;border-radius:5px;opacity:0;pointer-events:none;transition:opacity .2s ease}
+html.is-scrolling #page-scroll-indicator{opacity:1}
+@media(forced-colors:active){html{scrollbar-width:auto}html::-webkit-scrollbar{display:block}#page-scroll-indicator{display:none}}
+/* Give the newsletter CTA more separation from the social row. */
+.club footer .footer-socials{margin-top:32px}
+
+/* Footer: left brand block and right contact block, centered stack on mobile. */
+.club footer{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"brand socials" "info socials" "copyright copyright";gap:14px 48px;padding:40px 7% calc(32px + env(safe-area-inset-bottom,0px));align-items:start;text-align:left}
+.club footer .footer-brand{grid-area:brand;justify-self:start;justify-content:flex-start;align-self:start;width:auto;margin:0;padding:0}
+.club footer .footer-info{grid-area:info;justify-self:start;align-self:start;width:auto;text-align:left}
+.club footer .footer-tagline{text-align:left;margin:0;font-size:20px;line-height:1.5}
+.club footer .footer-info .footer-newsletter{margin:18px 0 0;align-self:flex-start;justify-self:start}
+.club footer .footer-socials{grid-area:socials;width:max-content;display:flex;flex-direction:column;gap:20px;align-items:flex-start;justify-content:center;align-self:center;margin:0}
+.club footer .footer-socials .social-link{justify-content:flex-start;align-self:flex-start}
+.club footer .footer-copyright{grid-area:copyright;justify-self:start;text-align:left;margin:48px 0 0}
+@media(max-width:750px){
+ .club footer{display:flex;flex-direction:column;align-items:center;text-align:center;gap:24px;padding-top:36px}
+ .club footer .footer-brand{align-self:center;justify-content:center}
+ .club footer .footer-info{align-self:center;text-align:center;width:auto}
+ .club footer .footer-tagline{text-align:center;font-size:clamp(16px,4.3vw,20px);white-space:normal}
+ .club footer .footer-info .footer-newsletter{align-self:center;margin-top:22px}
+ .club footer .footer-socials{align-self:center;margin-top:32px}
+ .club footer .footer-copyright{align-self:center;text-align:center;margin:24px 0 0}
+}
+/* Match the contact section's column start for the footer social links. */
+@media(min-width:751px){.club footer{grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);column-gap:6%}.club footer .footer-socials{justify-self:start}}
+/* Reserve validation space so errors never resize the newsletter modal. */
+#notify-dialog{height:360px;min-height:0}
+#notify-dialog .notify-content{padding-block:40px 52px}
+#notify-dialog .notify-form-slot{min-height:88px}
+@media(max-width:750px){#notify-dialog{height:440px}#notify-dialog .notify-form-slot{min-height:154px}}
+/* Compact matching postcard layouts on mobile. */
+@media(max-width:750px){
+ .club .event-postcard{display:flex}
+ .club .event-postcard .postcard-inner{flex:1;width:100%;padding:28px 14px 26px 22px;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);grid-template-rows:auto minmax(105px,auto) minmax(76px,auto) auto;row-gap:12px;column-gap:12px}
+ .club .event-postcard .postcard-details,.club .event-postcard .postcard-details dl{display:contents}
+ .club .event-postcard .postcard-details dl>div:first-child{grid-column:1;grid-row:2;align-self:end;padding-bottom:4px}
+ .club .event-postcard .postcard-details dl>div:last-child{grid-column:1/-1;grid-row:3;align-self:start}
+ .club .event-postcard .postcard-art{grid-column:2;grid-row:2;align-self:end}
+ .club .event-postcard .postcard-details .button{grid-column:1/-1;grid-row:4;align-self:end}
+ .club .event-postcard .venue-address{margin-top:2.5px}
+}
+@media(max-width:750px){.club .event-postcard .postcard-details .button{border:1px solid var(--ink)}}
+/* Bring mobile event details directly under the title, beside the photo. */
+@media(max-width:750px){
+ .club .event-postcard .postcard-inner{grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);grid-template-rows:auto 1fr auto;row-gap:16px}
+ .club .event-postcard .postcard-details{display:contents}
+ .club .event-postcard .postcard-details dl{display:flex;flex-direction:column;grid-column:1;grid-row:2;gap:12px;min-height:145px;align-self:start}
+ .club .event-postcard .postcard-details dl>div:first-child{padding:0;align-self:stretch}
+ .club .event-postcard .postcard-details dl>div:last-child{align-self:stretch}
+ .club .event-postcard .postcard-art{grid-row:2;align-self:start;margin-top:8px;padding:5px}
+ .club .event-postcard .postcard-details .button{grid-row:3}
+ .club .event-postcard .venue-address{font-size:11px;line-height:1.55}
+}
+/* Venue and street address share the same text size. */
+.club .event-postcard .venue-address{font-size:inherit;line-height:inherit}
+@media(max-width:750px){
+ .club .event-postcard .postcard-inner{row-gap:8px}
+ .club .event-postcard h3{margin-bottom:8px}
+ .club .event-postcard .postcard-details dl{min-height:0}
+ .club .postcard-soon .postcard-inner{padding-left:32px}
+}
+/* Add roughly 25% more mobile card height as breathing room below the CTA. */
+@media(max-width:750px){.club .event-postcard .postcard-inner{padding-bottom:112px}}
+/* Match detail spacing and trim the extra mobile paper below the CTA. */
+@media(max-width:750px){
+ .club .event-postcard .postcard-inner{row-gap:12px;padding-bottom:50px}
+ .club .event-postcard h3{margin-bottom:4px}
+}
+/* Keep the coming-soon CTA close to its shorter location copy on mobile. */
+@media(max-width:750px){
+ .club .postcard-soon .postcard-details{display:flex;grid-column:1;grid-row:2/4;gap:12px;align-self:start}
+ .club .postcard-soon .postcard-details dl{display:flex;min-height:0}
+ .club .postcard-soon .postcard-details .button{align-self:flex-start}
+}
+/* Center each mobile social link independently within the footer. */
+@media(max-width:750px){
+ .club footer .footer-socials{width:100%;align-items:center}
+ .club footer .footer-socials .social-link{align-self:center;justify-content:center}
+}
