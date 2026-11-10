@@ -19,7 +19,7 @@
     a:focus-visible{outline:2px solid var(--ink);outline-offset:6px}
     .confirmation-header{padding:32px 24px 0;display:flex;justify-content:center}
     .brand{display:inline-flex;align-items:center;gap:14px;text-decoration:none;font:600 clamp(23px,4.8vw,30px)/1.1 'Fraunces Soft',Georgia,serif;letter-spacing:-.045em;white-space:nowrap}
-    .brand img{width:auto;height:1.25em;aspect-ratio:355/477;display:block}
+    .brand .brand-lockup{width:8.3em;max-width:100%;height:1.25em;object-fit:contain;display:block}
     main{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;max-width:640px;margin:auto;padding:36px 24px 48px;text-align:center}
     .envelope{display:block;width:min(140px,35vw);height:auto;aspect-ratio:610/420;margin:0 0 24px;overflow:hidden}
     h1{font:600 clamp(38px,7.5vw,58px)/1.12 'Fraunces Soft',Georgia,serif;font-variation-settings:'WONK' 0;letter-spacing:-.045em;margin:0 0 20px;text-wrap:balance}
@@ -33,7 +33,7 @@
 </head>
 <body>
   <header class="confirmation-header">
-    <a class="brand" href="/" aria-label="letters for later home"><img src="assets/letters-for-later-logo-blue.svg" width="355" height="477" alt=""><span>letters for later</span></a>
+    <a class="brand" href="/" aria-label="letters for later home"><img class="brand-lockup" src="assets/logo-horizontal-blue.svg" width="479" height="74" alt=""></a>
   </header>
   <main>
     <svg class="envelope" viewBox="560 170 610 420" role="img" aria-labelledby="envelope-title">

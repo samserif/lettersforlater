@@ -2,3 +2,10 @@
 @media(max-width:1000px) and (min-width:751px){.contact-postage{width:64px;flex-basis:64px}.contact-action{gap:20px}}
 @media(max-width:750px){.contact-action{gap:24px}.contact-postage{width:65px;flex-basis:65px}.club header .logo{font-size:20px}}
 @media(max-width:380px){.club header{gap:7px;grid-template-columns:30px minmax(0,1fr) auto}.club header .logo{font-size:17px;gap:.25em}.club header .header-cta{padding-inline:9px}.contact-action{gap:18px}.contact-postage{width:49px;flex-basis:49px}}
+
+/* Fit the supplied artwork within the existing responsive logo footprints. */
+.club .brand-lockup{display:block;width:7.982em;max-width:100%;height:1.28125em;object-fit:contain}
+.club .footer-brand .brand-lockup{width:8.225em;height:1.5em}
+.club header .logo{max-width:100%;min-width:0}
+@media(max-width:750px){.club header .logo .brand-lockup,.club .mobile-menu-logo .brand-lockup{width:7.897em}}
+@media(max-width:380px){.club header .logo .brand-lockup,.club .mobile-menu-logo .brand-lockup{width:7.827em}}
